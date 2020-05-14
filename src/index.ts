@@ -1,4 +1,3 @@
-import { Request, Response } from "cross-fetch";
 import Negotiator from "negotiator";
 import escapeHTML from "escape-html";
 

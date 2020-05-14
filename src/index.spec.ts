@@ -1,4 +1,5 @@
-import { Request } from "cross-fetch";
+import "cross-fetch/polyfill";
+
 import * as boom from "@hapi/boom";
 import * as httpErrors from "http-errors";
 import { errorHandler } from "./index";
