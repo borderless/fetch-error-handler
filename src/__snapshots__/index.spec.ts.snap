@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error handler accept html should fail and return html 1`] = `
+"<!doctype html><html lang=\\"en\\"><head><meta charset=\\"utf-8\\"><title>Error</title></head><body><pre>{
+ &nbsp;&quot;status&quot;: 500,
+ &nbsp;&quot;error&quot;: &quot;500 Error&quot;,
+ &nbsp;&quot;message&quot;: &quot;Error&quot;
+}</pre></body></html>"
+`;
+
+exports[`error handler accept json should fail and return json 1`] = `"{\\"status\\":500,\\"error\\":\\"500 Error\\",\\"message\\":\\"Error\\"}"`;
+
+exports[`error handler default accepts should fail gracefully with empty error 1`] = `
+"<!doctype html><html lang=\\"en\\"><head><meta charset=\\"utf-8\\"><title>Error</title></head><body><pre>{
+ &nbsp;&quot;status&quot;: 500,
+ &nbsp;&quot;error&quot;: &quot;500 Error&quot;,
+ &nbsp;&quot;message&quot;: &quot;Error&quot;
+}</pre></body></html>"
+`;
+
+exports[`error handler default accepts should fail gracefully with non-error 1`] = `
+"<!doctype html><html lang=\\"en\\"><head><meta charset=\\"utf-8\\"><title>Error</title></head><body><pre>{
+ &nbsp;&quot;status&quot;: 500,
+ &nbsp;&quot;error&quot;: &quot;500 Error&quot;,
+ &nbsp;&quot;message&quot;: &quot;Error&quot;
+}</pre></body></html>"
+`;
+
+exports[`error handler default accepts should render an error 1`] = `
+"<!doctype html><html lang=\\"en\\"><head><meta charset=\\"utf-8\\"><title>Error</title></head><body><pre>{
+ &nbsp;&quot;status&quot;: 500,
+ &nbsp;&quot;error&quot;: &quot;500 Error&quot;,
+ &nbsp;&quot;message&quot;: &quot;Error&quot;
+}</pre></body></html>"
+`;
+
+exports[`error handler default accepts should render boom status errors 1`] = `
+"<!doctype html><html lang=\\"en\\"><head><meta charset=\\"utf-8\\"><title>Error</title></head><body><pre>{
+ &nbsp;&quot;statusCode&quot;: 400,
+ &nbsp;&quot;error&quot;: &quot;Bad Request&quot;,
+ &nbsp;&quot;message&quot;: &quot;data has an issue&quot;
+}</pre></body></html>"
+`;
+
+exports[`error handler default accepts should render http errors status error 1`] = `
+"<!doctype html><html lang=\\"en\\"><head><meta charset=\\"utf-8\\"><title>Error</title></head><body><pre>{
+ &nbsp;&quot;status&quot;: 400,
+ &nbsp;&quot;error&quot;: &quot;400 Error&quot;,
+ &nbsp;&quot;message&quot;: &quot;Error&quot;
+}</pre></body></html>"
+`;
