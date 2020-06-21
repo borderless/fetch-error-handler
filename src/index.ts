@@ -12,7 +12,7 @@ const DOUBLE_SPACE_REGEXP = /\x20{2}/g;
 interface Output {
   status: number;
   headers: Record<string, string>;
-  payload: object;
+  payload: unknown;
 }
 
 /**
@@ -23,7 +23,7 @@ function toOutput(err: any, production: boolean): Output {
     output?: {
       statusCode?: number;
       headers?: Record<string, string>;
-      payload?: any;
+      payload?: unknown;
     };
     statusCode?: number;
     status?: number;
