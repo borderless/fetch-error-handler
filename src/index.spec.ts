@@ -12,30 +12,35 @@ describe("error handler", () => {
     it("should fail gracefully with non-error", async () => {
       const res = handler("test");
 
+      expect(res.status).toEqual(500);
       expect(await res.text()).toMatchSnapshot();
     });
 
     it("should fail gracefully with empty error", async () => {
       const res = handler(undefined);
 
+      expect(res.status).toEqual(500);
       expect(await res.text()).toMatchSnapshot();
     });
 
     it("should render an error", async () => {
       const res = handler(new Error("boom!"));
 
+      expect(res.status).toEqual(500);
       expect(await res.text()).toMatchSnapshot();
     });
 
     it("should render boom status errors", async () => {
       const res = handler(boom.badRequest("data has an issue"));
 
+      expect(res.status).toEqual(400);
       expect(await res.text()).toMatchSnapshot();
     });
 
     it("should render http errors status error", async () => {
       const res = handler(new httpErrors.BadRequest("data has an issue"));
 
+      expect(res.status).toEqual(400);
       expect(await res.text()).toMatchSnapshot();
     });
   });
@@ -47,6 +52,7 @@ describe("error handler", () => {
     it("should fail and return html", async () => {
       const res = handler(new Error("boom!"));
 
+      expect(res.status).toEqual(500);
       expect(res.headers.get("content-type")).toEqual("text/html");
       expect(await res.text()).toMatchSnapshot();
     });
@@ -59,6 +65,7 @@ describe("error handler", () => {
     it("should fail and return json", async () => {
       const res = handler(new Error("boom!"));
 
+      expect(res.status).toEqual(500);
       expect(res.headers.get("content-type")).toEqual("application/json");
       expect(await res.text()).toMatchSnapshot();
     });
