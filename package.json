@@ -93,9 +93,8 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
+    "@hapi/accept": "^5.0.1",
     "@types/escape-html": "^1.0.0",
-    "@types/negotiator": "^0.6.1",
-    "escape-html": "^1.0.3",
-    "negotiator": "^0.6.2"
+    "escape-html": "^1.0.3"
   }
 }

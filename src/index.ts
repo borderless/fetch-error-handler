@@ -1,4 +1,4 @@
-import Negotiator from "negotiator";
+import { mediaType } from "@hapi/accept";
 import escapeHTML from "escape-html";
 
 /**
@@ -90,13 +90,10 @@ function renderJSON(req: Request, output: Output) {
  * Render HTTP response.
  */
 function render(req: Request, output: Output) {
-  const negotiator = new Negotiator({
-    headers: {
-      accept: req.headers.get("accept") || undefined,
-    },
-  });
-
-  const type = negotiator.mediaType(["text/html", "application/json"]);
+  const type = mediaType(req.headers.get("accept") || "", [
+    "text/html",
+    "application/json",
+  ]);
   if (type === "text/html") return renderHTML(req, output);
   return renderJSON(req, output);
 }
