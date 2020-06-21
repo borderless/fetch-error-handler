@@ -1,6 +1,6 @@
 {
   "name": "@borderless/fetch-error-handler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Error handler for fetch responses, e.g. Cloudflare Workers.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
